@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <algorithm>
 #include <iterator>
+#include "Warrior.h"
 
 
 using namespace std;
@@ -16,8 +17,24 @@ using namespace std;
 #define CPLUSPLUS_WIZARD_H
 
 
-class Wizard: public Warrior {
+class Wizard : public Warrior {
+public:
+    string _name;
 
+    string getName() {
+        return _name;
+    }
+
+    int displayName() {
+        std::cout << _name << ": " << endl;
+        return 0;
+    }
+
+    int modifyAttack(int point) {
+        _attack = _attack - point;
+        std::cout<<"Hehh! I can change your power";
+        return 0;
+    }
 };
 
 
